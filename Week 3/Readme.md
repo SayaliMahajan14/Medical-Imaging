@@ -1,0 +1,5 @@
+Week 3: Inverse Problems, CT and MRI Reconstruction
+
+This week focused on inverse problems in medical imaging and the mathematical frameworks used for image reconstruction. The study began with the forward model of image formation, ill-posed problems, and the role of regularization techniques such as Tikhonov and Total Variation (TV) regularization in obtaining stable solutions. Concepts from matrix calculus, gradient computation, and gradient-based optimization methods were also explored to understand reconstruction algorithms.
+
+The principles of Computed Tomography (CT) were studied, including X-ray attenuation, the Beer–Lambert law, attenuation coefficients, Hounsfield Units, the Radon transform, and the Fourier Slice Theorem. Reconstruction techniques such as Filtered Back Projection (FBP) and Algebraic Reconstruction Techniques (ART) were reviewed. The week also covered the fundamentals of Magnetic Resonance Imaging (MRI), including Larmor precession, Bloch equations, T1 and T2 relaxation, k-space representation, and compressed sensing MRI, providing insight into the physics and computational methods underlying modern medical imaging systems.
