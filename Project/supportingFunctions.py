@@ -51,7 +51,7 @@ def normalize01(img):
         img=np.reshape(img,(nimg,r,c))
     img2=np.empty(img.shape,dtype=img.dtype)
     for i in range(nimg):
-        img2[i]=div0(img[i]-img[i].min(),img[i].ptp())
+        img2[i]=div0(img[i]-img[i].min(), np.ptp(img[i]))
         #img2[i]=(img[i]-img[i].min())/(img[i].max()-img[i].min())
     return np.squeeze(img2).astype(img.dtype)
 
