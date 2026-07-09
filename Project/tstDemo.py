@@ -1,27 +1,14 @@
-"""
-Created on Fri Mar 30 12:39:26 2018
-This is the demo code. That should run without making any changes.
-Please ensure that demoImage.hdf5 is in the same directory as this file tstDemo.py.
-
-This code will load the learned model from the subdirectory 'savedModels'
-
-This test code will load an  image for  from the demoImage.hdf5 file.
-
-@author: haggarwal
-"""
 import os
 os.environ['TF_CPP_MIN_LOG_LEVEL']='2'
 import numpy as np
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
+tf.disable_v2_behavior()
 import matplotlib.pyplot as plt
 import supportingFunctions as sf
 
 cwd=os.getcwd()
 tf.reset_default_graph()
 
-#%% choose a model from savedModels directory
-
-#subDirectory='14Mar_1105pm'
 subDirectory='04Jun_0356pm_5L_10K_50E_AG'
 #%%Read the testing data from dataset.hdf5 file
 
