@@ -1,15 +1,7 @@
-"""
-Created on Aug 6th, 2018
-
-This file contains some supporting functions used during training and testing.
-
-@author:Hemant
-"""
 import time
 import numpy as np
 import h5py as h5
 
-#%%
 def div0( a, b ):
     """ This function handles division by zero """
     c=np.divide(a, b, out=np.zeros_like(a), where=b!=0)
@@ -102,25 +94,22 @@ def getData(trnTst='testing',num=100,sigma=.01):
     return org,atb,csm,mask
 
 #Here I am reading one single image from  demoImage.hdf5 for testing demo code
-def getTestingData():
+def getTestingData(sigma=0.01):
     print('Reading the data. Please wait...')
-    filename='demoImage.hdf5' #set the correct path here
+    filename='demoImage.hdf5'
     tic()
     with h5.File(filename,'r') as f:
         org,csm,mask=f['tstOrg'][:],f['tstCsm'][:],f['tstMask'][:]
-
     toc()
     print('Successfully read the data from file!')
     print('Now doing undersampling....')
     tic()
-    atb=generateUndersampled(org,csm,mask,sigma=.01)
+    atb=generateUndersampled(org,csm,mask,sigma=sigma)
     atb=c2r(atb)
     toc()
     print('Successfully undersampled data!')
     return org,atb,csm,mask
 
-
-#%%
 def piA(x,csm,mask,nrow,ncol,ncoil):
     """ This is a the A operator as defined in the paper"""
     ccImg=np.reshape(x,(nrow,ncol) )
